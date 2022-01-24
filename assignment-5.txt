@@ -1,0 +1,111 @@
+/* For creating Databse in Mongodb */
+use Demo
+
+/* for creating collection */
+db.createCollection('collection')
+
+/* show Database */
+show dbs
+
+/* Show collection */
+show collections
+
+/* Insertion */
+db.collection.insert({
+    name:'Rushabh',
+    id:1,
+    city:'Rajkot'
+})
+
+db.collection.insert()
+
+/* Insertion many items */
+db.collection.insertMany([
+    {
+        name:'Raj',
+        id:2,
+        city:'Rajkot'
+    },
+    { 
+        name:'Amit', 
+        id:3, 
+        city:'Junagadh', 
+        date:Date() 
+    },
+    { 
+        name: 'Samir', 
+        id:4, 
+        city:'Ahmedabad', 
+        job: ['Surat','Ahmedabad'] 
+    },
+    { 
+        name:'Meet', 
+        id:5, 
+        city:'Surat' 
+    },
+    {
+    name:'Harsh',
+    id:6,
+    city:'Mumbai',
+    positions : { A:'HR', B:'Founder' , C:'CEO' , D:'Designer'},
+    likes:6
+    }
+])
+
+/* find() means show result */
+db.collection.find()
+
+db.collection.find().pretty()
+
+db.collection.find({city:'Surat'}).pretty()
+
+db.collection.find().sort({id:1}).pretty()
+
+db.collection.find().sort({id:-1}).pretty()
+
+db.collection.find().forEach(function(a) {print('Hello ' + a.name)})
+
+db.collection.findOne({city:'Surat'})
+
+db.collection.find({city:'Surat'}).count()
+
+db.collection.find().limit(2)
+
+/* Update */
+db.collection.update({id:3},
+{
+    id:3,
+    name:'Jon',
+    date : Date(),
+    city : 'Goa',
+    likes: 3,
+    Mobile : 9898989898
+},{
+    upsert: true
+})
+
+/* Only add data that is inside $set */
+db.collection.update({id:1},
+{
+    $set: {
+        Object : {
+            1:'A',
+            2:'B',
+            3:'C'
+        },
+        Name : 'Rushabh'
+    }
+})
+
+/* old like in id=3 where 3, so final result will be (likes=3+2)=5 , increment of 2 */
+db.collection.update( {id:3} , {$inc :{likes:2}})
+
+/* likes will renamed to views */
+db.collection.update( {id:3} , {$rename :{likes: 'views'}})
+
+/* delete entry */
+db.collection.remove({id:6})
+
+/* For delete database */
+use databasename
+db.dropDatabase()
