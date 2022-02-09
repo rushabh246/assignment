@@ -1,0 +1,22 @@
+*{
+    background-color: powderblue;
+}
+.startbtn{
+    text-align: left-align;
+}
+h1{
+    text-align: center;
+}
+#quiz{
+    text-indent: 5px;
+    display: none;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#start{
+    display: none;
+    width: 10px;
+}
