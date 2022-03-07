@@ -1,0 +1,73 @@
+.form-cotrol{
+    box-shadow: none;
+}
+.form-cotrol:focus{
+    box-shadow: none !important;
+    margin-top: 15px !important;
+}
+input{
+    margin-top: 15px;
+}
+.register-form{
+    padding: 20;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    z-index: 999 !important;
+}
+.register-parent{
+    height: 100vh;
+    background-color: rgb(243, 217, 217);
+}
+.register-parent .row{
+    height: 100vh;
+    align-items: center;
+    z-index: 999 !important;
+}
+.my-3{
+    background-color: rgb(61, 163, 124);
+}
+h2{
+    background-color: rgb(47, 124, 197);
+}
+.register-top{
+    height: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    
+    z-index: 0 !important;
+    
+}
+
+.login-form{
+    padding: 20;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    z-index: 999 !important;
+}
+.login-parent{
+    height: 100vh;
+    background-color: rgb(243, 217, 217);
+}
+.login-parent .row{
+    height: 100vh;
+    align-items: center;
+    z-index: 999 !important;
+}
+.my-3{
+    background-color: rgb(61, 163, 124);
+}
+h2{
+    background-color: rgb(47, 124, 197);
+}
+.login-top{
+    height: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    
+    z-index: 0 !important;
+    
+}
