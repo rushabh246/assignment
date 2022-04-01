@@ -1,0 +1,27 @@
+<div class="container">
+    <img [src]="item.imageUrl" [alt]="item.name">
+</div>
+<div class="details">
+    <div class="header">
+        <span class="name">
+            {{item.name}}
+        </span>
+        <span class="favorite {{item.favorite?'': 'not'}}">
+            ❤
+        </span>
+    </div>
+    <div class="origins">
+        <span *ngFor="let origins of item.origin">
+            {{origins}}
+        </span>
+ </div>
+ <div class="tag">
+     <app-tags>[itemPageTags]="item.tags"></app-tags>
+ </div>
+ <div class="price">
+     <span>
+         {{item.price}}
+     </span>
+ </div>
+<button (click)="addToCart()">Add to Cart</button>
+</div>

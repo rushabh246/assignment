@@ -15,5 +15,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const fireDB = getFirestore(app)
+console.log("fireDB:", fireDB)
 
 export default fireDB;

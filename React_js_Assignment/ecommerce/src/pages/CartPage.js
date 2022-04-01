@@ -1,3 +1,5 @@
+
+   
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import { useSelector } from 'react-redux';
@@ -39,7 +41,7 @@ const Cartpage = () => {
         <tbody>
           {cartItems.map(item=>{
            return <tr>
-              <td><img src={item.imageURL} height='100' width='100'/></td>
+              <td><img src={item.imageURL} height='100' width='100' alt=''/></td>
               <td>{item.name}</td>
               <td>{item.price}</td>
               <td><FaTrash onClick={()=>deleteFromCart(item)}/></td>

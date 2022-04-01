@@ -1,0 +1,37 @@
+<app-not-found [visible]="!cart || cart.citems.length<=0" notFoundMessage="Items not found!"
+resetLinkText="Go to Hompage!"></app-not-found>
+<div *ngIf="cart && cart.citems.length>0" class="container">
+<ul>
+    <li *ngFor="let cartItem of cart.citems">
+        <div>
+        <img [src]="cartItem.item.imageUrl" [alt]="cartItem.item.name">
+    </div>
+    <div>
+        <a routerLink="/item/{{cartItem.item.id}}">
+            {{cartItem.item.name}}
+        </a>
+    </div> 
+    <div>
+        Rs.{{cartItem.price}}
+    </div>
+    <div>
+        <button class="remove-button" (click)="removeFromCart(cartItem)">Remove</button>
+    </div>
+    </li>
+</ul>
+<div class="checkout">
+    <div class="item-count">
+        {{cart.citems.length}}
+    </div>
+    <div class="total-price">
+       Rs.{{cart.totalPrice}}
+    </div>
+    <div>
+       <button routerLink="/checkout">Checkout</button> 
+    </div>
+  
+</div>
+
+
+
+

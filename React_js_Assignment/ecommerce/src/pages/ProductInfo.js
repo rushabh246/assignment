@@ -4,7 +4,7 @@ import { getDoc, doc } from "firebase/firestore";
 import fireDB from '../fireConfig';
 import { useParams } from "react-router-dom";
 const ProductInfo = () => {
-  const [product, setProducts] = useState([]);
+  const [product, setProduct] = useState([]);
   const [loading , setloading] = useState(false);
   const params = useParams()
   useEffect(() => {
@@ -16,7 +16,7 @@ const ProductInfo = () => {
       const productTemp = await getDoc(doc(fireDB, "products", params.id));
 
      setloading(false)
-      setProducts(productTemp.data());
+      setProduct(productTemp.data());
     } catch (error) {
       console.log(error)
       setloading(false)
@@ -26,7 +26,6 @@ const ProductInfo = () => {
     <Layout loading={loading}>
       <div className="container">
       <h1>Product Info</h1>
-
       {product && (<div>
         <p><b>{product.name}</b></p>
         <img src={product.image} className="product-info-img" alt=""/>

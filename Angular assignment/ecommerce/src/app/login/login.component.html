@@ -1,0 +1,25 @@
+<section class="vh-100" style="background-color: #a350fc;">
+<div class="container">
+    <div class=>
+        <h1 class="text-dark text-muted">Login</h1>
+         </div>
+         <form>
+             
+    <div class=>
+        <label for="exampleInputEmail1" class="form-label">Email:</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="email">
+    </div>
+    <div >
+        <label for="exampleInputEmail1" class="form-label">Password:</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="password">
+    </div>
+    <div>
+    <button type="button" class="btn btn-info" (click)="signIn()">Login</button> 
+</div>
+<div>
+            <a routerLink="/signup">Need an account?<span
+                class="text-danger">Register</span></a>
+            </div>
+</form>
+</div>
+</section>
